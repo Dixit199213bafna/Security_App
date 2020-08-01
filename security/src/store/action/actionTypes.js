@@ -1,0 +1,2 @@
+export const SET_TRACKS = 'SET_TRACKS';
+export const FETCH_TRACKS_FAILED = 'FETCH_TRACKS_FAILED';
