@@ -15,8 +15,9 @@ class Map extends Component {
         mapType: 'mapbox://styles/mapbox/satellite-v9'
     }
 
-    getInfo = (m) => {
-        this.setState({popupInfo: m});
+    getInfo = (track) => {
+        console.log(track)
+        this.setState({popupInfo: track});
     }
 
     _renderPopup() {
