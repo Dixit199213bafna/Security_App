@@ -1,5 +1,6 @@
 {
-  "routes": [
-    { "src": "/api/", "dest": "https://mis.ssreng.com/" }
+  "rewrites": [
+    { "source": "/about", "destination": "https://www.google.com/" },
+    { "source": "/api/(.*)", "destination": "https://mis.ssreng.com/" }
   ]
 }
