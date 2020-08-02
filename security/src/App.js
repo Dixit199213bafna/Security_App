@@ -8,15 +8,25 @@ import Loader from 'react-loader-spinner'
 
 class App extends Component {
     componentDidMount() {
-        this.props.fetchTracks();
+        let date = new Date('2020-07-01T17:15:00Z');
+        this.props.fetchTracks(date);
         this.timer = setInterval(()=> {
-            if(!this.props.errorMessage && this.props.tracks && this.props.tracks.length > 0) {
-                this.props.fetchTracks()
+            if(!this.props.errorMessage) {
+                // date.setDate(date.getDate()+1); // Can uncomment this code to increment date by one
+                this.props.fetchTracks(date)
             } else {
                 clearInterval(this.timer);
             }
         },
         2000);
+    }
+
+    shouldComponentUpdate(nextProps) {
+        if(this.props.tracks && this.props.tracks.length > 0 && nextProps.tracks.length === 0) {
+            clearInterval(this.timer);
+            return false;
+        }
+        return true;
     }
 
     componentWillUnmount() {
@@ -27,7 +37,7 @@ class App extends Component {
       let template;
       if(this.props.errorMessage) {
           template = (
-              <div class="center">
+              <div className="center">
                   <h1>{this.props.errorMessage}</h1>
               </div>
           )
@@ -69,7 +79,7 @@ const mapStateToProps = state => {
 }
 const mapDispatchToProps = disptach => {
     return {
-        fetchTracks: () => disptach(tracksActions.fetchTracks())
+        fetchTracks: (date) => disptach(tracksActions.fetchTracks(date))
     }
 }
 
