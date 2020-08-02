@@ -1,5 +1,5 @@
 {
-  "rewrites": [
-    { "source": "/api/", "destination": "https://mis.ssreng.com/" }
+  "routes": [
+    { "src": "/api/", "dest": "https://mis.ssreng.com/" }
   ]
 }
