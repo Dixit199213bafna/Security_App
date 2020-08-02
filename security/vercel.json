@@ -1,6 +1,6 @@
 {
   "rewrites": [
     { "source": "/about", "destination": "https://www.google.com/" },
-    { "source": "/api/(.*)", "destination": "https://mis.ssreng.com/" }
+    { "source": "/api", "destination": "https://mis.ssreng.com/api/" }
   ]
 }
