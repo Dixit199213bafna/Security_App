@@ -2,11 +2,30 @@ body {
     background: black;
 }
 
-.loader {
+.center {
     position: fixed;
     top: 50%;
     left: 50%;
     margin-top: -50px;
     margin-left: -100px;
     color: white;
+}
+
+.navigationControl {
+    position: absolute;
+    top:0;
+    margin: 10px;
+}
+
+.mapType {
+    position: absolute;
+    right:0;
+    margin: 10px;
+}
+.mapType select {
+    padding: 7px;
+    border-radius: 5px;
+    background: white;
+    color: #0a0505;
+    font-weight: bolder;
 }

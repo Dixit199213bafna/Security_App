@@ -20,14 +20,14 @@ class App extends Component {
     }
 
     componentWillUnmount() {
-        this.timer = null;
+        clearInterval(this.timer);
     }
 
     render() {
       let template;
       if(this.props.errorMessage) {
           template = (
-              <div class="loader">
+              <div class="center">
                   <h1>{this.props.errorMessage}</h1>
               </div>
           )
@@ -37,7 +37,7 @@ class App extends Component {
           )
       } else if(!this.props.errorMessage && !this.props.tracks) {
           template = (
-              <div className="loader">
+              <div className="center">
                   <Loader
                       type="TailSpin"
                       color="#00BFFF"
@@ -48,7 +48,7 @@ class App extends Component {
           )
       } else {
           template = (
-              <div className="loader">
+              <div className="center">
                   <h1>No Data to Track</h1>
               </div>
           )
