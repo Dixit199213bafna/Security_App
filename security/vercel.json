@@ -1,0 +1,6 @@
+{
+  "name": "security-app",
+  "rewrites": [
+    { "source": "/api/(.*)", "destination": "https://mis.ssreng.com/" }
+  ]
+}

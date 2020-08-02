@@ -40,7 +40,7 @@ class Map extends Component {
                     mapStyle={this.state.mapType}
                     onViewportChange={viewport => this.setState({viewport})}
                     mapboxApiAccessToken={MAPBOX_TOKEN}>
-                    {this.props.tracks.map(track => <Pins track={track} displayTrack={() => this.getInfo(track)}></Pins>)}
+                    {this.props.tracks.map(track => <Pins key={track.trackId} track={track} displayTrack={() => this.getInfo(track)}></Pins>)}
                     {this._renderPopup()}
                     <div className="navigationControl">
                         <NavigationControl />
